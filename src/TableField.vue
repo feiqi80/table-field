@@ -155,7 +155,13 @@
   const onSetDefault = (update = false) => {
     const defaults = props.defaultFields;
     const allFields = originColumns.value.filter(ele => ele.prop !== props.actionField && ele.type !== "selection");
-    const excludeArr = allFields.filter((ele: ColumnType) => defaults.indexOf(ele.prop) < 0).map((ele: ColumnType) => ({ label: ele.label, value: ele.prop, show: !defaults.length }));
+    const excludeArr = allFields
+      .filter((ele: ColumnType) => defaults.indexOf(ele.prop) < 0)
+      .map((ele: ColumnType) => ({ 
+        label: ele.label, 
+        value: ele.prop, 
+        show: !defaults.length
+      }));
     const arr = defaults.map((ele: string) => {
       const obj = allFields.find((elem: ColumnType) => elem.prop === ele);
       return {

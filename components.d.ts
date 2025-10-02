@@ -10,7 +10,5 @@ declare module 'vue' {
   export interface GlobalComponents {
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElPopover: typeof import('element-plus/es')['ElPopover']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
   }
 }
