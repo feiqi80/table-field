@@ -2,6 +2,9 @@
 
 ![列操作图片](https://showscene.oss-cn-shanghai.aliyuncs.com/table-field.gif)
 
+
+地址：[功能演示-demo](http://showscene.cn/vue-demo/user/list)
+
 这是一个操作表格列显示、隐藏、排序的组件。
 基于vue3 + element-plus + ts 开发。 主要功能包括：
 - 显示/隐藏列
@@ -25,7 +28,9 @@ yarn add table-field
 ## 页面引入
 ```bash
 import { TableField } from "table-field";
-import "table-field/dist/table-field.css";
+
+// 1.0.7版本开始，不需要引入css文件了。
+// import "table-field/dist/table-field.css";
 ```
 
 ## OR 或者全局安装
@@ -33,7 +38,8 @@ import "table-field/dist/table-field.css";
 在main.ts中：
 
 import { Table_Field } from "table-field";
-import "table-field/dist/table-field.css";
+// 1.0.7版本开始，不需要引入css文件了。
+// import "table-field/dist/table-field.css";
 
 app.use(Table_Field);
 ```
@@ -58,8 +64,7 @@ app.use(Table_Field);
 </template>
 
 <script>
-  import { TableField } from "table-field";
-  import "table-field/dist/table-field.css";
+  import { TableField } from "table-field";  
 
 
   const columns = ref([
@@ -105,6 +110,11 @@ head：自定义显示内容，默认内容 “列操作”
 ```
 
 # 更新日志
+
+## [1.0.7] - 2025-11-16
+### 更新内容【Breaking Change】
+- 移除"table-field/dist/table-field.css"文件的引入。
+- README文件内容更新。
 
 ## [1.0.6] - 2025-09-19
 ### 更新内容

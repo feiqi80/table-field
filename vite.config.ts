@@ -4,6 +4,7 @@ import dts from "vite-plugin-dts";
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
 
 export default defineConfig({
@@ -17,7 +18,8 @@ export default defineConfig({
     }),
     dts({
       insertTypesEntry: true,
-    })
+    }),
+    libInjectCss()
   ],
   build: {
     lib: {
