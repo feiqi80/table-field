@@ -1,6 +1,6 @@
 {
   "name": "table-field",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Show/hide table columns with sortable fields（vue3 + element-plus）",
   "keywords": ["table", "sortable", "columns", "UI", "vue3", "element-plus", "ts", "field", "show", "hide", "drag", "web", "component", "performance", "frontend"],
   "main": "./dist/table-field.umd.js",
@@ -9,6 +9,10 @@
   "type": "module",
   "author": "feiqi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feiqi80/table-field"
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite serve --port 3001"

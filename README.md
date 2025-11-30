@@ -54,7 +54,7 @@ app.use(Table_Field);
 
   <el-table>
     <el-table-column 
-      v-for="item in columns" :key="column.prop"
+      v-for="item in columns" :key="item.prop"
       v-bind="item"
     >
       ... ... ...
@@ -110,6 +110,10 @@ head：自定义显示内容，默认内容 “列操作”
 ```
 
 # 更新日志
+
+## [1.0.8] - 2025-11-30
+### 更新内容
+- README文件内容更新。
 
 ## [1.0.7] - 2025-11-16
 ### 更新内容【Breaking Change】
