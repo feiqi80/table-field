@@ -1,50 +1,53 @@
-# 表格列操作
+English | [中文](./README.zh-CN.md)
 
-![列操作图片](https://showscene.oss-cn-shanghai.aliyuncs.com/table-field.gif)
+# Table Column Manager
+
+![Table Column Manager](https://showscene.oss-cn-shanghai.aliyuncs.com/table-field.gif)
 
 
-地址：[功能演示-demo](http://showscene.cn/vue-demo/user/list)
+Demo：[Live demo](http://showscene.cn/vue-demo/user/list)
 
-这是一个操作表格列显示、隐藏、排序的组件。
-基于vue3 + element-plus + ts 开发。 主要功能包括：
-- 显示/隐藏列
-- 拖拽排序列
-- 全选列
-- 反选列
-- 恢复默认列
-- 列状态存入浏览器中（localStorage）。
+This is a component used to control table column visibility, ordering, and configuration.
 
-**注：不支持多级表头**
+It is built with Vue 3 + TypeScript + Element Plus and provides the following features:
+- Show / hide table columns
+- Drag to reorder columns
+- Select all columns
+- Reverse selection
+- Restore default column configuration
+- Persist column state in the browser (localStorage)
 
-## 安装
+**Note: Multi-level table headers are not supported**
+
+## Installation
 ```bash
 npm i table-field
 ```
-或者
+or
 ```bash
 yarn add table-field
 ```
 
-## 页面引入
+## Import
 ```bash
 import { TableField } from "table-field";
 
-// 1.0.7版本开始，不需要引入css文件了。
+// Starting from version 1.0.7, CSS import is no longer required
 // import "table-field/dist/table-field.css";
 ```
 
-## OR 或者全局安装
+## Or Global Installation
 ```bash
-在main.ts中：
+// In main.ts:
 
 import { Table_Field } from "table-field";
-// 1.0.7版本开始，不需要引入css文件了。
+// Starting from version 1.0.7, CSS import is no longer required
 // import "table-field/dist/table-field.css";
 
 app.use(Table_Field);
 ```
 
-## 使用说明
+## Usage
 ```vue
 <template>
   <table-field
@@ -86,66 +89,70 @@ app.use(Table_Field);
 </script>
 ```
 
-### 组件属性（props）
+### Component Props
 ```js
-/** 表头 */
+/** Table column configuration */
 modelValue: ColumnType[];
-/** 表名，当前表格在 localStorage 中的标识  */
+/** Table name used as the key in localStorage */
 tableName: string;
-/** 反选 */
+/** Enable reverse selection */
 reverseSelect?: boolean;
-/** 默认展示的字段 */
+/** Default visible fields */
 defaultFields?: string[];
-/** 操作列标识，默认prop: 'action' （操作列不会显示） */
+/** Action column identifier (default: prop = "action"). This column will not be displayed */
 actionField?: string;
-/** popper-class样式名 */
+/** Popper class name */
 popClass?: string;
-/** 拖拽字段样式名 */
+/** Dragging item class name */
 dragClass?: string;
 ```
 
-## 插槽（slot）
+## Slots
 ```bash
-head：自定义显示内容，默认内容 “列操作”
+head：Custom header content.，Default “Column Settings”
 ```
 
-# 更新日志
+# Changelog
+
+## [1.0.9] - 2026-03-07
+### Changes
+- Added English documentation.
 
 ## [1.0.8] - 2025-11-30
-### 更新内容
-- README文件内容更新。
+### Changes
+- Updated README content.
 
 ## [1.0.7] - 2025-11-16
-### 更新内容【Breaking Change】
-- 移除"table-field/dist/table-field.css"文件的引入。
-- README文件内容更新。
+### Changes【Breaking Change】
+- Removed the import of "table-field/dist/table-field.css".
+- Updated README content.
 
 ## [1.0.6] - 2025-09-19
-### 更新内容
-- README文件内容更新。
+### Changes
+- Updated README content.
 
 ## [1.0.5] - 2025-09-14
-### 更新内容
-- 增加弹出层自动变更位置功能。
-- 优化弹出层全局唯一性。
-- 优化head插槽元素实例。
+### Changes
+- Added automatic popover position adjustment.
+- Improved global uniqueness of the popover.
+- Optimized the head slot element instance.
 
 ## [1.0.4] - 2025-06-29
-### 更新内容
-- README文件增加更新日志
+### Changes
+- Added changelog to README.
 
 ## [1.0.3] - 2025-06-28
-### 更新内容
-- 更新README文件内容
+### Changes
+- Updated README content.
 
 ## [1.0.2] - 2025-06-28
-### 更新内容
-- 命名规范：属性defaultfields 改为：defaultFields
+### Changes
+- Naming convention update: defaultfields renamed to defaultFields.
 
 ## [1.0.1] - 2025-06-28
-### 更新内容
-- 增加日志文件
-- 更新组件功能描述
+### Changes
+- Added changelog.
+- Updated component description.
 
 ## [1.0.0] - 2025-06-27
-### 首次发布
+### Initial release.

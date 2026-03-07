@@ -1,6 +1,6 @@
 {
   "name": "table-field",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Show/hide table columns with sortable fields（vue3 + element-plus）",
   "keywords": ["table", "sortable", "columns", "UI", "vue3", "element-plus", "ts", "field", "show", "hide", "drag", "web", "component", "performance", "frontend"],
   "main": "./dist/table-field.umd.js",
