@@ -423,6 +423,10 @@
   :global(.tf-popover) {
     width: max-content !important;
     padding: 0 !important;
+    // 待调试
+    z-index: 9999;
+    box-shadow: 0 0 6px 4px #999 !important;
+    // end
   }
 
   :global(.tf-popover .el-popper__arrow) {
@@ -451,6 +455,20 @@
           > p {
             color: var(--el-color-primary);
             cursor: pointer;
+            // 待调试
+            outline: solid 1px var(--el-color-primary);
+            border-radius: 4px;
+            padding: 2.5px 6px;
+            font-size: 12px;
+            cursor: pointer;
+            &:nth-of-type(1) {
+              margin-left: auto;
+            }
+            &:hover {
+              background-color: var(--el-color-primary);
+              color: #fff !important;
+            }
+            // end
           }
         }
         &:nth-child(2) {
