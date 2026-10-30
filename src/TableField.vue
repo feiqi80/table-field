@@ -416,7 +416,7 @@
   :global(.tf-popover) {
     width: max-content !important;
     padding: 0 !important;
-    box-shadow: 0 0 6px 4px #999 !important;
+    box-shadow: 0 0 10px #999 !important;
   }
 
   :global(.tf-popover .el-popper__arrow) {
