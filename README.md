@@ -56,13 +56,25 @@ app.use(Table_Field);
   />
 
   <el-table>
+    <!-- use v-if  -->
     <el-table-column 
-      v-for="item in columns" :key="item.prop"
-      v-bind="item"
+      v-for="item in columns" 
+      :key="item.prop"
     >
+      <template v-if="item.prop === 'action'">
+        <button>Edit</button>
+        <button>Delete</button>
+      </template
       ... ... ...
       ... ... ...
     </el-table-column>
+
+    <!-- Or use v-bind -->
+    <el-table-column 
+      v-for="item in columns" 
+      :key="item.prop"
+      v-bind="item"
+    />
   </el-table>
 </template>
 
@@ -73,16 +85,16 @@ app.use(Table_Field);
   const columns = ref([
     {type: "selection", width: 50, fixed: "left"},
     {label: "ID", prop: "id", width: 100, fixed: "left"},
-    {label: "用户名", prop: "username", width: 120},
-    {label: "姓名", prop: "name", width: 120},
-    {label: "手机", prop: "phone", width: 150},
-    {label: "邮箱", prop: "email", width: 200},
+    {label: "Account", prop: "username", width: 120},
+    {label: "User", prop: "name", width: 120},
+    {label: "Phone", prop: "phone", width: 150},
+    {label: "Email", prop: "email", width: 200},
     ... ...
     ... ...
-    {label: "操作", prop: "action", width: 150, fixed: "right", render: ({row}) => {
+    {label: "action", prop: "action", width: 150, fixed: "right", render: ({row}) => {
       return h('div', { }, [
-        h(ElButton, {}, () => '编辑'),
-        h(ElButton, {}, () => '删除'),
+        h(ElButton, {}, () => 'Edit'),
+        h(ElButton, {}, () => 'Delete'),
       ])
     }}
   ]);
@@ -113,6 +125,10 @@ head：Custom header content.，Default “Column Settings”
 ```
 
 # Changelog
+
+## [1.0.10] - 2026-10-30
+### Changes
+- Optimize Interactions and Styles.
 
 ## [1.0.9] - 2026-03-07
 ### Changes

@@ -49,19 +49,26 @@ app.use(Table_Field);
 ## 使用说明
 ```vue
 <template>
-  <table-field
-    v-model="columns"
-    tableName="user"
-  />
-
   <el-table>
+    <!-- 使用 v-if  -->
     <el-table-column 
-      v-for="item in columns" :key="item.prop"
-      v-bind="item"
+      v-for="item in columns" 
+      :key="item.prop"
     >
+      <template v-if="item.prop === 'action'">
+        <button>编辑</button>
+        <button>删除</button>
+      </template
       ... ... ...
       ... ... ...
     </el-table-column>
+
+    <!-- 或者使用 v-bind -->
+    <el-table-column 
+      v-for="item in columns" 
+      :key="item.prop"
+      v-bind="item"
+    />
   </el-table>
 </template>
 
@@ -112,6 +119,10 @@ head：自定义显示内容，默认内容 “列操作”
 ```
 
 # 更新日志
+
+## [1.0.10] - 2026-10-30
+### 更新内容
+- 优化交互和样式。
 
 ## [1.0.9] - 2026-03-07
 ### 更新内容

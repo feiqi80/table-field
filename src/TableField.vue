@@ -1,5 +1,5 @@
 <template>
-  <el-popover :placement="placement" :popper-class="`tf-popover ${popClass}`" @hide="onHide" @show="onShow">
+  <el-popover :placement="placement" :popper-class="`tf-popover ${popClass}`" @show="onShow">
     <template #reference>
       <div ref="tfRef">
         <slot name="head">
@@ -7,7 +7,7 @@
         </slot>
       </div>
     </template>
-    <template v-if="show">
+    <template #default>
       <div :style="{maxHeight: `${popHeight}px`}">
         <div>
           <el-checkbox v-model="selectAll">全选</el-checkbox>
@@ -92,8 +92,6 @@
   const selectedFields = ref<SelectedType[]>([]);
   /** 高度 */
   const popHeight = ref(0);
-  /** 显示/隐藏内容，组件只是隐藏，并没有销毁，因为本组件使用了id，所以不销毁的话，会导致id重复。 */
-  const show = ref(false);
   /** 插槽元素实例 */
   const tfRef = ref<HTMLDivElement>();
   /** 位置 */
@@ -386,13 +384,8 @@
     window.removeEventListener("resize", setPopHeight);
   })
 
-  const onHide = () => {
-    show.value = false;
-  }
-
   const onShow = () => {
     setPopHeight();
-    show.value = true;
   }
 
   /**
@@ -423,10 +416,7 @@
   :global(.tf-popover) {
     width: max-content !important;
     padding: 0 !important;
-    // 待调试
-    z-index: 9999;
     box-shadow: 0 0 6px 4px #999 !important;
-    // end
   }
 
   :global(.tf-popover .el-popper__arrow) {
@@ -455,7 +445,6 @@
           > p {
             color: var(--el-color-primary);
             cursor: pointer;
-            // 待调试
             outline: solid 1px var(--el-color-primary);
             border-radius: 4px;
             padding: 2.5px 6px;
@@ -468,7 +457,6 @@
               background-color: var(--el-color-primary);
               color: #fff !important;
             }
-            // end
           }
         }
         &:nth-child(2) {
