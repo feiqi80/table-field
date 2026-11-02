@@ -49,6 +49,12 @@ app.use(Table_Field);
 ## 使用说明
 ```vue
 <template>
+
+  <table-field
+    v-model="columns"
+    tableName="user"
+  />
+
   <el-table>
     <!-- 使用 v-if  -->
     <el-table-column 
@@ -119,6 +125,10 @@ head：自定义显示内容，默认内容 “列操作”
 ```
 
 # 更新日志
+
+## [1.0.11] - 2026-11-02
+### 更新内容
+- 更新Readme。
 
 ## [1.0.10] - 2026-10-30
 ### 更新内容

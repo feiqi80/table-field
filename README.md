@@ -50,6 +50,7 @@ app.use(Table_Field);
 ## Usage
 ```vue
 <template>
+
   <table-field
     v-model="columns"
     tableName="user"
@@ -125,6 +126,10 @@ head：Custom header content.，Default “Column Settings”
 ```
 
 # Changelog
+
+## [1.0.11] - 2026-11-02
+### Changes
+- Update README.
 
 ## [1.0.10] - 2026-10-30
 ### Changes
