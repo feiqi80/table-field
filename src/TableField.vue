@@ -449,7 +449,6 @@
             border-radius: 4px;
             padding: 2.5px 6px;
             font-size: 12px;
-            cursor: pointer;
             &:nth-of-type(1) {
               margin-left: auto;
             }
@@ -500,6 +499,13 @@
             
             &.begin-drag {
               z-index: 9999;
+              /** 
+               *  当初这里禁用主要是因为：
+               *    1. 设置了z-index，其余元素的mouseenter被遮住不起作用，
+               *    2. 如果不设置z-index，拖拽时元素会重叠，而且mouseenter会和自身冲突。
+               *  但是禁用后的副作用是连鼠标形状也无法设置了，这个倒真没想到。所以暂时只能用下面的:has()来设置形状。
+               *  后面有时间再尝试当mouseenter时，看看能否排除自身。
+               */
               pointer-events: none;
               > div {
                 box-shadow: 0 0 6px 3px var(--el-color-primary);          
@@ -511,5 +517,10 @@
         }
       }
     }
+  }
+
+  /** 老浏览器可能不兼容 */
+  :global(.tf-popover:has(.begin-drag) *) {
+    cursor: move !important;
   }
 </style>

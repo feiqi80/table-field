@@ -127,6 +127,10 @@ head：Custom header content.，Default “Column Settings”
 
 # Changelog
 
+## [1.0.12] - 2026-11-04
+### Changes
+- Optimize cursor shape when sorting.
+
 ## [1.0.11] - 2026-11-02
 ### Changes
 - Update README.
