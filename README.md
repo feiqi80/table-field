@@ -57,25 +57,23 @@ app.use(Table_Field);
   />
 
   <el-table>
-    <!-- use v-if  -->
     <el-table-column 
       v-for="item in columns" 
-      :key="item.prop"
-    >
-      <template v-if="item.prop === 'action'">
-        <button>Edit</button>
-        <button>Delete</button>
-      </template
-      ... ... ...
-      ... ... ...
-    </el-table-column>
-
-    <!-- Or use v-bind -->
-    <el-table-column 
-      v-for="item in columns" 
-      :key="item.prop"
       v-bind="item"
-    />
+    >
+      <template #default="{ row }">
+
+        <div v-if="item.prop === 'action'">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+
+        <!-- other v-if -->
+        ... ...
+        ... ...
+
+      </template>
+    </el-table-column>
   </el-table>
 </template>
 
@@ -126,6 +124,11 @@ head：Custom header content.，Default “Column Settings”
 ```
 
 # Changelog
+
+## [1.0.13] - 2026-11-06
+### Changes
+- Optimize background-color when sorting and popover arrow position.
+- Update README.
 
 ## [1.0.12] - 2026-11-04
 ### Changes

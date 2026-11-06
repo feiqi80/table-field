@@ -56,25 +56,23 @@ app.use(Table_Field);
   />
 
   <el-table>
-    <!-- 使用 v-if  -->
     <el-table-column 
       v-for="item in columns" 
-      :key="item.prop"
-    >
-      <template v-if="item.prop === 'action'">
-        <button>编辑</button>
-        <button>删除</button>
-      </template
-      ... ... ...
-      ... ... ...
-    </el-table-column>
-
-    <!-- 或者使用 v-bind -->
-    <el-table-column 
-      v-for="item in columns" 
-      :key="item.prop"
       v-bind="item"
-    />
+    >
+      <template #default="{ row }">
+
+        <div v-if="item.prop === 'action'">
+          <button>编辑</button>
+          <button>删除</button>
+        </div>
+
+        <!-- 其他 v-if -->
+        ... ...
+        ... ...
+
+      </template>
+    </el-table-column>
   </el-table>
 </template>
 
@@ -125,6 +123,11 @@ head：自定义显示内容，默认内容 “列操作”
 ```
 
 # 更新日志
+
+## [1.0.13] - 2026-11-06
+### 更新内容
+- 优化排序时的背景颜色和弹出层的箭头位置。
+- 更新Readme
 
 ## [1.0.12] - 2026-11-04
 ### 更新内容

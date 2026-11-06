@@ -401,6 +401,10 @@
 
 
 <style lang="less" scoped>
+  .el-tooltip__trigger {
+    width: max-content;
+  }
+
   .tf-btn {
     width: 85px;
     text-align: center;
@@ -417,11 +421,6 @@
     width: max-content !important;
     padding: 0 !important;
     box-shadow: 0 0 10px #999 !important;
-  }
-
-  :global(.tf-popover .el-popper__arrow) {
-    left: initial !important;
-    right: 20px !important;
   }
 
   .tf-popover {
@@ -510,7 +509,7 @@
               > div {
                 box-shadow: 0 0 6px 3px var(--el-color-primary);          
                 border-radius: 4px;
-                background-color: #fff;
+                background-color: var(--el-bg-color);
               }        
             }
           }
